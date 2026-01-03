@@ -1,0 +1,108 @@
+# ===============================
+# PYTHON
+# ===============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+
+# Python Distribution / Build
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ===============================
+# DJANGO
+# ===============================
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+
+# Local settings and secrets
+.env
+.env.local
+.env.production
+.env.dev
+*.env
+
+# Django static and media
+staticfiles/
+static/
+media/
+MEDIA_ROOT/
+STATIC_ROOT/
+
+
+
+# ===============================
+# CELERY / REDIS
+# ===============================
+celerybeat-schedule
+celerybeat.pid
+*.pid
+*.log
+*.out
+
+# Redis dump
+dump.rdb
+
+# ===============================
+# SUPABASE
+# ===============================
+supabase/.temp/
+supabase/functions/.netlify/
+*.supabase
+.supabase/
+
+# ===============================
+# EDITOR / IDE
+# ===============================
+.vscode/
+.idea/
+*.code-workspace
+
+# ===============================
+# OS FILES
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Node (if frontend exists)
+# ===============================
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# ===============================
+# Python cache & misc
+# ===============================
+*.cache
+*.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.pytest_cache/
+.pyre/
+.mypy_cache/
