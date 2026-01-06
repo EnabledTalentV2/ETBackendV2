@@ -165,7 +165,8 @@ class CandidateViewSet(viewsets.ModelViewSet):
                 "parsing_status": instance.parsing_status,
                 "has_resume_data": bool(instance.resume_data),
                 "resume_file_exists": bool(instance.resume_file),
-                "has_verified_data": bool(instance.verified_data),  # ✅ NEW
+                "has_verified_data": bool(instance.skills or instance.linkedin),
+
             },
             status=status.HTTP_200_OK,
         )
@@ -205,8 +206,12 @@ class CandidateViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        instance.verified_data = verified_payload
-        instance.save(update_fields=["verified_data"])
+        for field, value in verified_payload.items():
+            if hasattr(instance, field):
+                setattr(instance, field, value)
+
+        instance.save()
+
 
         return Response(
             {
